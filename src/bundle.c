@@ -318,7 +318,7 @@ out_free_curl:
 
 	return ret;
 }
-/* comment */
+
 /* tristate return, -1 for errors, 1 for no errors but no new subscriptions, 0 for no errors and new subscriptions */
 int add_subscriptions(struct list *bundles, int current_version, struct manifest *mom)
 {

@@ -6,6 +6,8 @@ compiler:
 os:
     - linux
 
+dist: trusty
+
 language: c
 
 addons:
@@ -22,11 +24,11 @@ addons:
             - llvm-3.8
 
 before_install:
-  - gem install coveralls-lcov
-  - wget -nc --no-check-certificate http://downloads.sourceforge.net/ltp/lcov-1.10.tar.gz
-  - tar xzf lcov-1.10.tar.gz
-  - cd lcov-1.10 && make && sudo make install
-  - cd ..
+    - gem install coveralls-lcov
+    - wget -nc --no-check-certificate http://downloads.sourceforge.net/ltp/lcov-1.10.tar.gz
+    - tar xzf lcov-1.10.tar.gz
+    - cd lcov-1.10 && make && sudo make install
+    - cd ..
 
 script:
     - lcov --version | grep "1.10"
@@ -35,7 +37,7 @@ script:
 
 
 after_success:
-  - cd ${TRAVIS_BUILD_DIR}
-  - lcov --compat-libtool --directory . --capture --output-file coverage.info
-  - lcov --remove coverage.info 'tests/*' '/usr/*' --output-file coverage.info
-  - coveralls-lcov coverage.info
+    - cd ${TRAVIS_BUILD_DIR}
+    - lcov --compat-libtool --directory . --capture --output-file coverage.info
+    - lcov --remove coverage.info 'tests/*' '/usr/*' --output-file coverage.info
+    - coveralls-lcov coverage.info

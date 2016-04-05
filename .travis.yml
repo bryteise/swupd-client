@@ -25,7 +25,9 @@ addons:
             - python3
 
 before_install:
-    - sudo pip3 install tap.py
+    - PIP3=$(which pip3)
+    - echo ${PIP3}
+    - sudo ${PIP3} install tap.py
     - gem install coveralls-lcov
     - wget -nc https://github.com/clearlinux/bsdiff/releases/download/v1.0.1/bsdiff-1.0.1.tar.xz
     - xz -d bsdiff-1.0.1.tar.xz

@@ -28,7 +28,7 @@ before_install:
     - wget -nc https://github.com/clearlinux/bsdiff/releases/download/v1.0.1/bsdiff-1.0.1.tar.xz
     - xz -d bsdiff-1.0.1.tar.xz
     - tar xf bsdiff-1.0.1.tar
-    - cd bsdiff-1.0.1 && autoreconf -fis && configure && make && sudo make install
+    - cd bsdiff-1.0.1 && autoreconf -fis && ./configure && make && sudo make install
     - cd ..
     - wget -nc --no-check-certificate http://downloads.sourceforge.net/ltp/lcov-1.10.tar.gz
     - tar xzf lcov-1.10.tar.gz

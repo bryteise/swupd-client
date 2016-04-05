@@ -70,7 +70,7 @@ test -z "${unitpath}" && unitpath=/usr/lib/systemd/system
 AC_SUBST(SYSTEMD_UNITDIR, [${unitpath}])
 
 AS_IF([test "$enable_tests" != "no"], [
-  PKG_CHECK_MODULES([check], [check >= 0.9.12])
+  PKG_CHECK_MODULES([check], [check >= 0.9.10])
   AC_PATH_PROG([have_python3], [python3])
   AS_IF([test -z "${have_python3}"], [
     AC_MSG_ERROR([Must have Python 3 installed to run functional tests])
